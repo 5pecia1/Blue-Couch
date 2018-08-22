@@ -1,0 +1,80 @@
+
+@font-face{font-family:'Nanum Gothic'; src:url('/batang.woff')}
+.textareaflex {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color:lightgrey;
+}
+
+textarea::placeholder {
+  color: grey;  
+  font-style: italic;
+  font-size: 20px;
+}
+
+.button {
+    color: skyblue;
+    font-size: 20px;
+    margin: 2% 8%;
+    font-family:'batang';
+    border-style: none;
+}
+
+
+@font-face {
+	font-family: batang;
+	src:url(batang.woff);
+    font-weight: normal;
+}
+
+#fixedfooter {
+    position:absolute;
+    bottom:0;
+}
+
+/*tablet 크기*/
+@media screen and (min-width: 768px) {
+.textareaflex {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color:lightgrey;
+    width: 80%;
+}
+
+textarea::placeholder {
+  color: grey;  
+  font-style: italic;
+  font-size: 20px;
+}
+
+.button {
+    color: skyblue;
+    font-size: 30px;
+    margin: 2% 8%;
+    font-family:'batang';
+}
+
+
+@font-face {
+	font-family: batang;
+	src:url(batang.woff);
+    font-weight: normal;
+}
+
+#fixedfooter {
+    position:absolute;
+    bottom:0;
+}
+}

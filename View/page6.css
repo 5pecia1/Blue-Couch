@@ -1,0 +1,41 @@
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color:lightgrey;
+    height: 55vh;
+    width: 80vw;
+}
+
+#txtSearch {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color:lightgrey;
+    height: 3vh;
+    width: 40vw;
+}
+
+#txtSearch::placeholder {
+  color: grey;  
+  font-style: italic;
+  font-size: 1.3em;
+}
+
+textarea::placeholder {
+  color: grey;  
+  font-style: italic;
+  font-size: 1.3em;
+}
+
+@font-face {
+	font-family: batang;
+	src:url(batang.woff);
+    font-weight: normal;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+

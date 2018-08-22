@@ -1,0 +1,34 @@
+
+#content{
+         margin-top: 15vh;
+}
+#main{
+        font-size: 14px;
+        text-align: center;
+        font-style: italic;
+        color: grey;
+        font-weight: lighter;
+}
+#moodall { 
+        display: flex;
+        flex-direction: row;
+        height: 220px;
+}
+.item {
+        flex-grow:1;
+}
+#mood1 { background-color: rgb(193, 223, 240);
+    
+}
+#mood2 { background-color: rgb(105, 212, 235);
+    
+}
+#mood3{ background-color: rgb(40, 160, 228);
+    
+}
+#mood4{ background-color: rgb(20, 121, 181);
+    
+}
+#mood5{ background-color: rgb(13, 81, 118);
+    
+}

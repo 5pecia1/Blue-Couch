@@ -1,0 +1,142 @@
+/*~767: 반응형으로*/
+/*768~: width:768 height: 1024 크기로 고정시키기*/
+
+
+.menuflex {
+        display: flex; 
+        flex-direction: row-reverse;
+}
+.menu-bar {
+        width:17vw;
+        height:17vw;
+        margin: 2%; 
+}
+
+.date {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 5%;
+}           
+.circle {
+    height: 14vw;
+    width: 14vw;
+    background-color: rgb(117, 212, 243);
+    color: rgb(143, 196, 241);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#backarrow {
+    height: 6vh;
+    width: 6vh;
+    margin: 5%;
+}
+
+.recordflex {
+    display: flex;
+    justify-content: center;
+                        
+}
+
+.textareaflex {
+    display: flex;
+    justify-content: center;
+}
+
+
+@font-face {
+	font-family: batang;
+	src:url(batang.woff);
+    font-weight: normal;
+}
+
+.buttonfont {
+    color: skyblue;
+    font-size: 1.2em;
+    font-family:'batang';
+    font-weight: normal;
+}
+
+.blankbutton{
+    flex-grow: 1;
+}
+
+
+/*tablet 크기*/
+@media screen and (min-width: 768px) {
+.menuflex {
+        display: flex; 
+        flex-direction: row-reverse;
+        width: 768px;
+}
+
+.menu-bar {
+    /*0819 메뉴바 크기 수정-너무 커져서*/
+        /*width:14vw;*/
+        /*height:14vw;*/
+        width:81.6px;
+        height:81.6px;
+        margin: auto 0; 
+}
+
+.fixedsizefortablet{
+    width: 768px;
+    height: 1024px;
+}
+
+.date {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 5%;
+}           
+.circle {
+    height: 94px;
+    width: 94px;
+    background-color: rgb(117, 212, 243);
+    color: rgb(143, 196, 241);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#backarrow {
+    height: 37.5px;
+    width: 37.5px;
+    margin: 5%;
+}
+
+.recordflex {
+    display: flex;
+    justify-content: center;
+                        
+}
+
+.textareaflex {
+    display: flex;
+    justify-content: center;
+}
+
+
+@font-face {
+	font-family: batang;
+	src:url(batang.woff);
+    font-weight: normal;
+}
+
+.buttonfont {
+    color: skyblue;
+    font-size: 19px;
+    font-family:'batang';
+    font-weight: normal;
+}
+
+.blankbutton{
+    flex-grow: 1;
+}
+    
+}

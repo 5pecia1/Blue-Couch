@@ -1,0 +1,76 @@
+#content{
+        margin-top: 30%;
+}
+#main{
+        font-size: 0.875em;
+        text-align: center;
+        font-style: italic;
+        color: grey;
+        font-weight: lighter;
+}
+#moodall { 
+        display: flex;
+        height: 24vh;
+}
+.item {
+        flex-grow:1;
+}
+#mood1 { background-color: rgb(193, 223, 240);
+    
+}
+#mood2 { background-color: rgb(105, 212, 235);
+    
+}
+#mood3{ background-color: rgb(40, 160, 228);
+    
+}
+#mood4{ background-color: rgb(20, 121, 181);
+    
+}
+#mood5{ background-color: rgb(13, 81, 118);
+    
+}
+
+
+/*태블릿 크기*/
+@media screen and (min-width: 768px) {
+        
+.fixedsizefortablet {
+    width: 768px;
+    height: 1024px;
+}
+
+#content{
+        margin-top: 100px;
+        /*width: 480px;*/
+}
+#main{
+        font-size: 14px;
+        text-align: center;
+        font-style: italic;
+        color: grey;
+        font-weight: lighter;
+}
+#moodall { 
+        display: flex;
+        height: 250px;
+}
+.item {
+        flex-grow:1;
+}
+#mood1 { background-color: rgb(193, 223, 240);
+    
+}
+#mood2 { background-color: rgb(105, 212, 235);
+    
+}
+#mood3{ background-color: rgb(40, 160, 228);
+    
+}
+#mood4{ background-color: rgb(20, 121, 181);
+    
+}
+#mood5{ background-color: rgb(13, 81, 118);
+    
+}
+}
