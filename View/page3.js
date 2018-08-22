@@ -25,7 +25,8 @@ $(document).ready(function () {
       }  
   }  
 
-    
+  
+  
   $("#addBtn").click(function () {    
     var content = $('#content').val();  
     var newDate = new Date();
