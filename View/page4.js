@@ -80,14 +80,12 @@ function displayData() {
 
 	getData(position,page).then(function(cats) {
 		var s = '';
-		var newDate = new Date();
-		var Month = newDate.getMonth()+1;
 		console.log(cats)
 		cats.forEach(function(cat) {
 			i += cat.textNo;
 			s += `
 			<tr onclick=tr(${cat.textNo})>
-				<td>${newDate.getFullYear() + '.' + Month + '.' + newDate.getDate()}</td>
+				<td>${cat.Date}</td>
 				<td>"Color"</td>
 				<td class="td" id=${cat.textNo}>${cat.Content}</td>
 				<td>"녹음"</td>

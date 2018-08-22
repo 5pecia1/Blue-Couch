@@ -1,6 +1,6 @@
 $(document).ready(function () {  
   // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
-  var request, db, keyval;  
+  var request, db;
 
 
    
@@ -25,15 +25,18 @@ $(document).ready(function () {
       }  
   }  
 
-    
+  
+  
   $("#addBtn").click(function () {    
     var content = $('#content').val();  
-     
+    var newDate = new Date();
+    var Month = newDate.getMonth()+1; 
+    var date = newDate.getFullYear() + '.' + Month + '.' + newDate.getDate();
 
     var transaction = db.transaction(["MemoTextField"], "readwrite");  
 
     var objectStore = transaction.objectStore("MemoTextField");  
-    objectStore.add({ Content: content });  
+    objectStore.add({ Content: content, Date: date });  
 
     transaction.oncomplete = function (event) {  
         console.log("Success :)");  
@@ -48,7 +51,8 @@ $(document).ready(function () {
 
     ClearTextBox();  
 
-    });  
+    });
+    
 
   function ClearTextBox() {  
       $('#title').val('');  
