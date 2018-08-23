@@ -60,5 +60,17 @@ $(document).ready(function () {
       $('#txtSearch').val('');  
   }  
 
-
+  setMoodColor();
 });
+
+function setMoodColor() {
+    let color = readColorByQueryString();
+    let node = document.getElementsByClassName('circle')[0];
+    node.style.backgroundColor = '#' + color;
+}
+
+function readColorByQueryString(){
+    var regex = "color="; 
+    var str = window.location.search.substring(1); 
+    return str.replace(regex, ""); 
+}
