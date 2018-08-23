@@ -1,0 +1,8 @@
+.record{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color:lightgrey;
+    height: 4vh;
+    width: 80vw;
+}

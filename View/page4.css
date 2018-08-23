@@ -1,8 +1,8 @@
 .graphtable {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .verticalLine {
@@ -31,6 +31,7 @@ table.shorttable {
     margin : 2% 2%;
     font-size: 1em;
     table-layout: fixed;
+    width: 80vw;
 }
 table.shorttable th {
     font-weight: lighter;
@@ -55,71 +56,9 @@ table.shorttable td {
     width: 10vw;
 }
 #date{
-    width: 4%;
+    width: 15vw;
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
-.graphtable {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.verticalLine {
-    border-left: solid;
-    height: 40vh;
-    border-width: 1px;
-    border-color: grey;
-    margin-top: 8%;
-}
-
-.horiozntalLine {
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: grey;
-    margin-bottom: 30px;
-    width: 90vw;
-    
-}
-
-table.shorttable {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: left;
-    line-height: 1.5;
-    border-top: 1px solid #ccc;
-    margin : 2% 2%;
-    font-size: 1em;
-    table-layout: fixed;
-}
-table.shorttable th {
-    font-weight: lighter;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    font-size: 0.8em;
-    color: skyblue;
-    padding: 5px;
-}
-table.shorttable td {
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    font-weight: lighter;
-    overflow: hidden;
-    text-overflow:ellipsis; 
-    white-space:nowrap;
-    font-size: 0.7em;
-}
-
-#shorter{
-    width: 10vw;
-}
-#date{
-    width: 4%;
-}
-    
-}
 
 @media screen and (min-width: 768px) {
 
@@ -176,7 +115,7 @@ table.shorttable td {
     width: 53.5px;
 }
 #date{
-    width: 4%;
+    width: 30px;
 }
 
 }

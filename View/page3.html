@@ -14,29 +14,29 @@
 </head>
 
 <body>
-
-    <div class=menuflex>
-        <img class="menu-bar" src="menu-bar.png" />
-    </div>
-<!--div 추가-->
+    <!--div 추가-->
     <div class="fixedsizefortablet">
-    <span class="circle"></span>
+        <div class=menuflex>
+            <img class="menu-bar" src="menu-bar.png" />
+        </div>
+        <span class="circle"></span>
 
-    <p class="date"> 2018.08.08 </p>
+        <p class="date" id="now"></p>
 
-    <div class=textareaflex>
-        <textarea name="content" id="content" rows="6" cols="50" placeholder="지금 당신의 기분은 어떠한가요?"></textarea>
+        <div class=textareaflex>
+            <textarea name="content" id="content" rows="6" cols="50" placeholder="지금 당신의 기분은 어떠한가요?"></textarea>
+        </div>
+
+        <center>
+            <input type="button" value="녹음하기" OnClick="ModifyAll(this.form);" class="button">
+            <a href="page4.html"><input type="button" name="addBtn" value="저장하기" id="addBtn" class="button" /></a>
+        </center>
+
+        <div id=fixedfooter>
+            <img id="backarrow" src="backarrow.png">
+        </div>
     </div>
-
-    <center>
-        <input type="button" value="녹음하기" OnClick="ModifyAll(this.form);" class="button">
-        <a href="page4.html"><input type="button" name="addBtn" value="저장하기" id="addBtn" class="button" /></a>
-    </center>
-
-    <div id=fixedfooter>
-        <img id="backarrow" src="backarrow.png">
-    </div>
-    </div>
+    <script src="page7.js"></script>
 </body>
 
 </html>
