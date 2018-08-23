@@ -7,15 +7,15 @@
         flex-direction: row-reverse;
 }
 .menu-bar {
-        width:17vw;
-        height:17vw;
+        width:81.6px;
+        height:81.6px;
         margin: 2%; 
 }
 
 .date {
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 5%;
 }           
 .circle {
@@ -40,7 +40,25 @@
     justify-content: center;
                         
 }
+.signupflex{
+    border-style: hidden;
+    width: 70%;
+    /*height: 20vh;*/
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    -webkit-align-items: center;
+    flex-wrap: wrap;
 
+}
+.signflex{
+    border-style: hidden;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    
+}
 .textareaflex {
     display: flex;
     justify-content: center;
@@ -64,6 +82,15 @@
     flex-grow: 1;
 }
 
+.button {
+    font-size: 1.2em;
+    font-family:'batang';
+    font-weight: normal;
+    color: skyblue;
+    border-style: none;
+    margin: 10px;
+    background-color: white;
+}
 
 /*tablet 크기*/
 @media screen and (min-width: 768px) {
@@ -139,4 +166,14 @@
     flex-grow: 1;
 }
     
+.button {
+    font-size: 1.2em;
+    font-family:'batang';
+    font-weight: normal;
+    color: skyblue;
+    border-style: none;
+    margin: 10px;
+    background-color: white;
+
+}
 }

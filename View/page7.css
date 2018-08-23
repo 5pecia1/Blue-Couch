@@ -26,14 +26,6 @@ textarea::placeholder {
   font-size: 1.3em;
 }
 
-.button {
-    font-size: 1.2em;
-    font-family:'batang';
-    font-weight: normal;
-    margin-right: 5%;
-    color: skyblue;
-    border-style: none;
-}
 
 .arrowsave {
     display: flex;

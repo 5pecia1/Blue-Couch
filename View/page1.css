@@ -1,5 +1,5 @@
 #content{
-        margin-top: 30%;
+        margin-top: 100px;
 }
 #main{
         font-size: 0.875em;
@@ -10,7 +10,7 @@
 }
 #moodall { 
         display: flex;
-        height: 24vh;
+        height: 250px;
 }
 .item {
         flex-grow:1;

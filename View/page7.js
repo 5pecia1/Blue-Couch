@@ -2,6 +2,7 @@ var h2 = document.getElementById('timer'),
 start = document.getElementById('start'),
 cancle = document.getElementById('cancle'),
 save = document.getElementById('save'),
+currentTime = document.getElementById('now'),
 seconds = 0,minutes = 0,t;
 var request, db;  
 
@@ -28,6 +29,29 @@ else {
 
     }  
 }
+function NOW() {
+
+    var date = new Date();
+    var aaaa = date.getFullYear();
+    var gg = date.getDate();
+    var mm = (date.getMonth() + 1);
+
+    if (gg < 10)
+        gg = "0" + gg;
+        
+    var cur_day = aaaa + "년 " + mm + "월 " + gg + "일 ";
+
+    var hours = date.getHours()
+    var minutes = date.getMinutes()
+    if (hours < 10)
+        hours = "0" + hours;
+
+    if (minutes < 10)
+        minutes = "0"+ minutes;
+    return cur_day + " " + hours + "시 " + minutes + "분";
+}
+
+currentTime.textContent = NOW();
 
 function add() {
 seconds++;
@@ -60,9 +84,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 
 cancle.onclick = function() {
 h2.textContent = "00:00";
-alert("정지");
 clearTimeout(t);
-alert("정지완료?");
 seconds = 0; minutes = 0;
 start.disabled = false;
 save.disabled = true;
@@ -72,7 +94,10 @@ chunks = [];
 }
 
 save.onclick = function(){
-alert("저장 되었습니다.");
+alert(h2.textContent + "저장 되었습니다.");
+h2.textContent = "00:00";
+clearTimeout(t);
+seconds = 0; minutes = 0;
 recorder.stop();
 }
 
