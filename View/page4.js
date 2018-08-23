@@ -75,22 +75,19 @@ function countData() {
 
 }
 
+
 function displayData() {
 
 	getData(position,page).then(function(cats) {
 		var s = '';
-		var newDate = new Date();
-		var Month = newDate.getMonth()+1;
-		var str;
 		console.log(cats)
 		cats.forEach(function(cat) {
 			i += cat.textNo;
 			s += `
-			<tr>
-				<td>${newDate.getFullYear() + '.' + Month + '.' + newDate.getDate()}</td>
+			<tr onclick=tr(${cat.textNo})>
+				<td>${cat.Date}</td>
 				<td>"Color"</td>
 				<td class="td" id=${cat.textNo}>${cat.Content}</td>
-				<td><a href="page6.html?${cat.textNo}"><input type="button" id="key" value=${cat.textNo}></a></td>
 				<td>"녹음"</td>
 			</tr>`;
 		});
@@ -110,6 +107,12 @@ function displayData() {
 		}
 	});
 }
+
+function tr(key) {
+	console.log(key + "page load");
+	location.href = 'page6.html?' + "id=" + key;
+}
+
 function move(e) {
 	if(e.target.id === 'nextButton') {
 		position += page;

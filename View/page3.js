@@ -1,25 +1,64 @@
-var currentTime = Document.getElementById("now");
+$(document).ready(function () {  
+  // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
+  var request, db;
 
-function NOW() {
 
-    var date = new Date();
-    var aaaa = date.getFullYear();
-    var gg = date.getDate();
-    var mm = (date.getMonth() + 1);
+   
+  if (!window.indexedDB) {  
+      console.log("Your Browser does not support IndexedDB");  
+  }  
+  else {  
+      request = window.indexedDB.open("MemoDB", 25);  
+      request.onerror = function (event) {  
+          console.log("Error opening DB", event);  
+      }  
+      request.onupgradeneeded = function (event) {  
+          console.log("Upgrading");  
+          db = event.target.result;  
+          var objectStore = db.createObjectStore("MemoTextField", { keyPath: "textNo", autoIncrement: true });  
+           
+      }  
+      request.onsuccess = function (event) {  
+          console.log("Success opening DB");  
+          db = event.target.result;  
 
-    if (gg < 10)
-        gg = "0" + gg;
-        
-    var cur_day = aaaa + "년 " + mm + "월 " + gg + "일 ";
+      }  
+  }  
 
-    var hours = date.getHours()
-    var minutes = date.getMinutes()
-    if (hours < 10)
-        hours = "0" + hours;
+  
+  
+  $("#addBtn").click(function () {    
+    var content = $('#content').val();  
+    var newDate = new Date();
+    var Month = newDate.getMonth()+1; 
+    var date = newDate.getFullYear() + '.' + Month + '.' + newDate.getDate();
 
-    if (minutes < 10)
-        minutes = "0"+ minutes;
-    return cur_day + " " + hours + "시 " + minutes + "분";
-}
+    var transaction = db.transaction(["MemoTextField"], "readwrite");  
 
-currentTime.textContent = NOW();
+    var objectStore = transaction.objectStore("MemoTextField");  
+    objectStore.add({ Content: content, Date: date });  
+
+    transaction.oncomplete = function (event) {  
+        console.log("Success :)");  
+        $('#result').html("Add: Successfully");  
+
+    };  
+
+    transaction.onerror = function (event) {  
+        console.log("Error :)");  
+        $('#result').html("Add: Error occurs in inserting");  
+    };  
+
+    ClearTextBox();  
+
+    });
+    
+
+  function ClearTextBox() {  
+      $('#title').val('');  
+      $('#content').val('');    
+      $('#txtSearch').val('');  
+  }  
+
+
+});
