@@ -1,0 +1,25 @@
+.labelstyle {
+    font-family: 'batang';
+}
+
+.logologin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginform{
+    margin-top: 10%;
+}
+
+.inputstyle{
+    border: 0;
+    outline: 0;
+    border-bottom: 1px lightgrey;
+}
+.buttonflex{
+    margin-top: 5%;
+     display: flex;
+     justify-content: space-between;
+}
