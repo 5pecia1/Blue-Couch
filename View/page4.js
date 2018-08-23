@@ -86,11 +86,12 @@ function displayData() {
 			s += `
 			<tr onclick=tr(${cat.textNo})>
 				<td>${cat.Date}</td>
-				<td>"Color"</td>
+				<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${cat.Color} }</style></span></td>
 				<td class="td" id=${cat.textNo}>${cat.Content}</td>
 				<td>"녹음"</td>
 			</tr>`;
 		});
+
 		$('#tbody').html(s);
 		console.log('got cats');
 		if(position > 0) {
