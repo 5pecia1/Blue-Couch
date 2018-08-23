@@ -51,3 +51,7 @@ function addRowsAndDraw(chart, chartDataTable, options, rows = []) {
     ]);
     chart.draw(chartDataTable, options);
 }
+
+window.addEventListener('resize', function(){
+    initChart();
+});
