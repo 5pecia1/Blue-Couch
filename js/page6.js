@@ -22,7 +22,7 @@ $(document).ready(function () {
             db = event.target.result;  
             pageload();
             NOW((date) => {
-                currentTime.textContent = date.getFullYear() + '-' + date.getMonth()+1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes() );
+                currentTime.textContent = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes() );
             });
         }  
     }
