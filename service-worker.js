@@ -24,6 +24,7 @@ const filesToCache = [
   '/page15.html',
   '/pagelogin.html',
   '/js/chart.js',
+  '/js/chart_loader.js',
   '/js/page1.js',
   '/js/page3.js',
   '/js/page4.js',
@@ -53,8 +54,7 @@ const filesToCache = [
   '/img/rightarrow.png',
   '/img/bluecouch.png',
   '/img/bluecouch.svg',
-  '/font/batang.woff',
-  'https://www.gstatic.com/charts/loader.js'
+  '/font/batang.woff'
 ];
 
 self.addEventListener('install', function(e) {
