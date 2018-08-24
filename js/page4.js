@@ -92,7 +92,8 @@ function displayData() {
 			</tr>`;
 		});
 
-		document.querySelector('tbody').html(s);
+		document.getElementById('tbody').innerHTML = s;
+
 		console.log('got cats');
 		if(position > 0) {
 			console.log('enable back');

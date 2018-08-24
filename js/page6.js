@@ -1,7 +1,9 @@
-document.ready(function () {  
+document.addEventListener('DOMContentLoaded', function () {  
     // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
     var request, db;
     var currentTime = document.getElementById('now');
+    let updateData = document.getElementById('updateBtn');
+    let deleteData = document.getElementById('deleteBtn');
        
     if (!window.indexedDB) {  
         console.log("Your Browser does not support IndexedDB");  
@@ -33,8 +35,7 @@ document.ready(function () {
         request.onsuccess = function (event) {
             var r = request.result;
             var newdate = new Date(r.Date);
-            if (r != null) {
-            console.log(newdate);   
+            if (r != null) {  
             callBack(newdate);    
             }            
         };
@@ -49,40 +50,42 @@ document.ready(function () {
     request.onsuccess = function (event) {  
         var r = request.result;  
         if (r != null) {  
-              document.querySelector('content').val(r.Content);
-              node.style.backgroundColor = r.Color;   
+            node.style.backgroundColor = r.Color;
+            document.getElementById('content').value = r.Content;   
         } else {    
               alert('Record Does not exist');  
         }  
     };
     }; 
       
-    document.querySelector('updateBtn').click(function () {  
+    updateData.addEventListener('click', function () {  
        // var rollNo = parseInt($('#txtSearch').val());
-        var rollNo = readIdByQueryString(); 
-        var title = document.querySelector('title').val();  
-        var content = document.querySelector('content').val();    
+        var rollNo = readIdByQueryString();  
+        var content = document.getElementById('content').value;    
   
         var transaction = db.transaction(["MemoTextField"], "readwrite");  
         var objectStore = transaction.objectStore("MemoTextField");  
         var request = objectStore.get(rollNo);  
         request.onsuccess = function (event) {  
-  
-            request.result.Title = title;  
             request.result.Content = content;   
             objectStore.put(request.result);  
-            alert('Recored Updated Successfully !!!');  
+            alert('Recored Updated Successfully !!!');
+            move();  
         };  
   
     });  
   
-    document.querySelector('deleteBtn').click(function () {  
+    deleteData.addEventListener('click', function () {  
         //var id = parseInt($('#txtSearch').val());
         var id = readIdByQueryString();  
         db.transaction(["MemoTextField"], "readwrite").objectStore("MemoTextField").delete(id);  
-        alert(' Recored No. ' + id + ' Deleted Successfully !!!');  
+        alert(' Recored No. ' + id + ' Deleted Successfully !!!');
+        move();
     });  
   
+    function move() {
+        location.href = 'page4.html';
+      }
   
   });
   
