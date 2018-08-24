@@ -1,4 +1,4 @@
-$(document).ready(function () {  
+document.ready(function () {  
     // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
     var request, db;
     var currentTime = document.getElementById('now');
@@ -49,28 +49,19 @@ $(document).ready(function () {
     request.onsuccess = function (event) {  
         var r = request.result;  
         if (r != null) {  
-              $('#content').val(r.Content);
+              document.querySelector('content').val(r.Content);
               node.style.backgroundColor = r.Color;   
-        } else {  
-              ClearTextBox();  
+        } else {    
               alert('Record Does not exist');  
         }  
     };
     }; 
-  
-  
-    function ClearTextBox() {  
-        $('#title').val('');  
-        $('#content').val('');    
-        $('#txtSearch').val('');  
-    }  
-  
-     
-    $('#updateBtn').click(function () {  
+      
+    document.querySelector('updateBtn').click(function () {  
        // var rollNo = parseInt($('#txtSearch').val());
         var rollNo = readIdByQueryString(); 
-        var title = $('#title').val();  
-        var content = $('#content').val();    
+        var title = document.querySelector('title').val();  
+        var content = document.querySelector('content').val();    
   
         var transaction = db.transaction(["MemoTextField"], "readwrite");  
         var objectStore = transaction.objectStore("MemoTextField");  
@@ -85,7 +76,7 @@ $(document).ready(function () {
   
     });  
   
-    $('#deleteBtn').click(function () {  
+    document.querySelector('deleteBtn').click(function () {  
         //var id = parseInt($('#txtSearch').val());
         var id = readIdByQueryString();  
         db.transaction(["MemoTextField"], "readwrite").objectStore("MemoTextField").delete(id);  

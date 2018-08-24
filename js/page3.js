@@ -1,4 +1,4 @@
-$(document).ready(function () {  
+document.ready(function () {  
   // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
   var request, db;
 
@@ -28,7 +28,7 @@ $(document).ready(function () {
   }
   
   
-  $("#addBtn").click(function () {    
+  document.querySelector("addBtn").click(function () {    
     var content = $('#content').val();
     var newdate = new Date();  
     var date = new Date(newdate.toISOString());
@@ -50,18 +50,8 @@ $(document).ready(function () {
         console.log("Error :)");  
         $('#result').html("Add: Error occurs in inserting");  
     };  
-
-    ClearTextBox();  
-
     });
-    
-
-  function ClearTextBox() {  
-      $('#title').val('');  
-      $('#content').val('');    
-      $('#txtSearch').val('');  
-  }  
-
+     
   setMoodColor();
 });
 
