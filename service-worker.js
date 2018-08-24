@@ -2,6 +2,7 @@ const version = "0.1.0"
 const cacheName = `BlueCouch-${version}`;
 const filesToCache = [
   '/',
+  '/manifest.json',
   '/index.html',
   '/service-worker.js',
   '/app.js',
@@ -46,7 +47,7 @@ const filesToCache = [
   '/css/page13.css',
   '/css/page14.css',
   '/css/pagelogin.css',
-  '/img/backarrow.png',
+  '/img/ackarrow.png',
   '/img/bluecouch.png',
   '/img/menu-bar.png',
   '/img/rightarrow.png',
