@@ -92,7 +92,7 @@ function displayData() {
 			</tr>`;
 		});
 
-		$('#tbody').html(s);
+		document.querySelector('tbody').html(s);
 		console.log('got cats');
 		if(position > 0) {
 			console.log('enable back');
