@@ -31,7 +31,7 @@ table.shorttable {
     margin : 2% 2%;
     font-size: 1em;
     table-layout: fixed;
-    width: 80vw;
+    width: 100%;
 }
 table.shorttable th {
     font-weight: lighter;
@@ -59,9 +59,13 @@ table.shorttable td {
     width: 15vw;
 }
 
-
+tablemain{
+    width:100%;
+}
 @media screen and (min-width: 768px) {
-
+    tablemain{
+        width: 768px;
+    }
 .verticalLine {
     border-left: solid;
     /*height: 40%;*/
@@ -83,6 +87,7 @@ table.shorttable td {
 /*    width: 768px;*/
 /*}*/
 table.shorttable {
+    width:100%;
     border-collapse: separate;
     border-spacing: 1px;
     text-align: left;
