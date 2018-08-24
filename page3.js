@@ -2,8 +2,6 @@ $(document).ready(function () {
   // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;  
   var request, db;
 
-
-   
   if (!window.indexedDB) {  
       console.log("Your Browser does not support IndexedDB");  
   }  
@@ -31,12 +29,13 @@ $(document).ready(function () {
     var content = $('#content').val();  
     var newDate = new Date();
     var Month = newDate.getMonth()+1; 
-    var date = newDate.getFullYear() + '.' + Month + '.' + newDate.getDate();
+    var date = newDate.getFullYear() + '.' + Month + '.' + newDate.getDate() + ', ' + newDate.getHours() + ':' + newDate.getMinutes();
+    var color = "#" + readColorByQueryString();
 
     var transaction = db.transaction(["MemoTextField"], "readwrite");  
 
     var objectStore = transaction.objectStore("MemoTextField");  
-    objectStore.add({ Content: content, Date: date });  
+    objectStore.add({ Content: content, Date: date, Color: color });  
 
     transaction.oncomplete = function (event) {  
         console.log("Success :)");  
@@ -60,5 +59,17 @@ $(document).ready(function () {
       $('#txtSearch').val('');  
   }  
 
-
+  setMoodColor();
 });
+
+function setMoodColor() {
+    let color = readColorByQueryString();
+    let node = document.getElementsByClassName('circle')[0];
+    node.style.backgroundColor = '#' + color;
+}
+
+function readColorByQueryString(){
+    var regex = "color="; 
+    var str = window.location.search.substring(1); 
+    return str.replace(regex, ""); 
+}

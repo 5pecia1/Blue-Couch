@@ -152,6 +152,16 @@ p {
     margin: auto;
 }
 
+.color {
+    height: 15px;
+    width: 15px;
+    color: rgb(143, 196, 241);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
 #backarrow {
     height: 70px;
     width: 70px;
