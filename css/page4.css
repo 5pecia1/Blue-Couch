@@ -28,10 +28,10 @@ table.shorttable {
     text-align: left;
     line-height: 1.5;
     border-top: 1px solid #ccc;
-    margin : 2% 2%;
     font-size: 1em;
     table-layout: fixed;
-    width: 100%;
+    width: 95%;
+    margin: 10px ;
 }
 table.shorttable th {
     font-weight: lighter;
@@ -42,7 +42,8 @@ table.shorttable th {
     padding: 5px;
 }
 table.shorttable td {
-    padding: 10px;
+    
+    padding: 10px 5px;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
     font-weight: lighter;
@@ -52,16 +53,37 @@ table.shorttable td {
     font-size: 0.7em;
 }
 
-#shorter{
+.shorter{
     width: 10vw;
+    text-align: center;
 }
+
 #date{
-    width: 15vw;
+    width: 30px;
+    text-align: center;
+}
+#colorCell {
+    width: 20px;
+    text-align: center;
+}
+
+#recoderCell {
+    width: 30px;
+    text-align: center;
 }
 
 tablemain{
     width:100%;
 }
+
+tbody tr > td {
+    text-align: center;
+}
+
+#chart_div {
+    width: 95%;
+}
+
 @media screen and (min-width: 768px) {
     tablemain{
         width: 768px;
@@ -116,11 +138,6 @@ table.shorttable td {
     font-size: 11px;
 }
 
-#shorter{
+.shorter{
     width: 53.5px;
-}
-#date{
-    width: 30px;
-}
-
 }
