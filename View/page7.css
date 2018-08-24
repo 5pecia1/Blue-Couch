@@ -27,7 +27,3 @@ textarea::placeholder {
 }
 
 
-.arrowsave {
-    display: flex;
-    justify-content: space-between;
-}

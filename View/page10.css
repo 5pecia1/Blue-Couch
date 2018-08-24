@@ -1,10 +1,11 @@
 h1 {
     font-size: 1.2em;
-    font-family: batang;
+    font-family: 'batang';
 }
 
-.questions{
-    width: 70%;
+p {
+  font-size: 1.1em;
+  font-family: 'batang';
 }
 
 #fixedfooter {
@@ -15,3 +16,11 @@ h1 {
 .questionsflex{
     display:flex;
 }
+
+.questionbutton{
+    font-size: 0.8em;
+    font-family:'batang';
+    font-weight: normal;
+    background-color: white;   
+}
+

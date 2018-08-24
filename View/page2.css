@@ -1,6 +1,29 @@
-
+.menumainflex{
+        display:flex;
+        justify-content: space-around;
+}
 #content{
          margin-top: 15vh;
+}
+#main{
+        font-size: 2em;
+        font-style: italic;
+        color: grey;
+        font-weight: lighter;
+}
+.item {
+        flex-grow:1;
+}
+
+@media screen and (min-width: 768px) {
+        
+.fixedsizefortablet {
+    width: 768px;
+    height: 1024px;
+}
+#content{
+        margin-top: 100px;
+        /*width: 480px;*/
 }
 #main{
         font-size: 14px;
@@ -11,8 +34,7 @@
 }
 #moodall { 
         display: flex;
-        flex-direction: row;
-        height: 220px;
+        height: 250px;
 }
 .item {
         flex-grow:1;
@@ -31,4 +53,5 @@
 }
 #mood5{ background-color: rgb(13, 81, 118);
     
+}
 }

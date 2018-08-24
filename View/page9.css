@@ -35,10 +35,10 @@ table.shorttable td {
 }
 
 #name{
-    width: 10vw;
+    width: 7vw;
 }
 #number{
-    width: 10vw;
+    width: 7vw;
 }
 
 .pagination {
@@ -53,10 +53,9 @@ table.shorttable td {
     text-decoration: none;
 }
 
-
-#fixedfooter {
-    position:absolute;
-    bottom:0;
+.menu-name{
+    margin: 30px;
+    font-family: 'batang';
 }
 
 .shorttable{

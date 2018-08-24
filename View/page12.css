@@ -4,7 +4,8 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
+    margin: 10px;
+}
   
   /* Hide default HTML checkbox */
   .switch input {display:none;}
@@ -57,9 +58,11 @@
     border-radius: 50%;
   }
 /*여기부터 다! */
-h3{
-    margin: 0 0 0 5%;
+.menu-name{
+    margin: 30px;
+    font-family: 'batang';
 }
+
 .settingmaindiv{
     display: flex;
     flex-direction: column;
@@ -76,6 +79,7 @@ h3{
 .settingdivc{
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 .settingdivsmall{
     display: flex;
@@ -84,6 +88,13 @@ h3{
     margin-right: 2%;
     align-self: center;
 }
+
+#rightarrow{
+    width:30px;
+    height:30px;
+    margin: 10px;
+}
+
 @media screen and (min-width: 768px) {
     .settingmaindiv{
         width: 768px;
@@ -102,6 +113,8 @@ h3{
     .settingdivc{
         display: flex;
         flex-direction: column;
+         padding: 10px;
+
     }
     .settingdivsmall{
         width: 768px;
@@ -112,6 +125,9 @@ h3{
         align-self: center;
     }
     
-    
+#rightarrow{
+    width:30px;
+    height:30px;
+} 
  
 }
