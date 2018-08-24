@@ -4,7 +4,7 @@
 
 .menuflex {
         display: flex; 
-        flex-direction: row-reverse;
+        justify-content: space-between;
 }
 .menu-bar {
         width:70px;
@@ -117,7 +117,7 @@ p {
 @media screen and (min-width: 768px) {
 .menuflex {
         display: flex; 
-        flex-direction: row-reverse;
+        justify-content: space-between;
         width: 768px;
 }
 

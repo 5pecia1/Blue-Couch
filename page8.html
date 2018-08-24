@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -11,16 +11,17 @@
     <title>Document</title>
 </head>
 
-<body>
     <!--div 추가-->
+    <body class=centerflex>
     <div class="fixedsizefortablet">   
     <div class=menuflex>
+        <img class="menu-bar" src="img/bluecouch.png"/>
         <img class="menu-bar" src="img/menu-bar.png" />
     </div>
 
     <span class="circle"></span>
 
-    <p class="date"> 2018.08.08 </p>
+    <p id ="now" class="date"> </p>
 
     <div class=recordflex>
         <textarea rows="1" cols="50" class=record>
@@ -38,6 +39,7 @@
         <input type="button" class="button" value="지우기">
     </div>
     </div>
+    <script src="js/page8.js"></script>
 </body>
 
 </html>

@@ -85,14 +85,14 @@ function displayData() {
 			i += cat.textNo;
 			s += `
 			<tr onclick=tr(${cat.textNo})>
-				<td>${cat.Date.getFullYear()}-${cat.Date.getMonth()+1}-${cat.Date.getDate()} ${cat.Date.getHours()}:${cat.Date.getMinutes()}</td>
+				<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
 				<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${cat.Color} }</style></span></td>
 				<td class="td" id=${cat.textNo}>${cat.Content}</td>
 				<td>"녹음"</td>
 			</tr>`;
 		});
 
-		$('#tbody').html(s);
+		document.querySelector('tbody').html(s);
 		console.log('got cats');
 		if(position > 0) {
 			console.log('enable back');

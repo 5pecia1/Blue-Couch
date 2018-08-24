@@ -8,15 +8,19 @@ function initChart() {
 
     chartDataTable = new google.visualization.DataTable();
 
-    chartDataTable.addColumn('string', '날짜');
+    chartDataTable.addColumn('date', '날짜');
     chartDataTable.addColumn('number', '글자 수');
     chartDataTable.addColumn( {'type': 'string', 'role': 'style'} );
 
     let options = {
       title: '당신의 기분 변화',
+      height: 300,
       legend: { position: 'bottom' },
       vAxis: {
         format: '0'
+      },
+      hAxis: {
+        format: 'MMM/dd HH:mm'
       }
     };
 
