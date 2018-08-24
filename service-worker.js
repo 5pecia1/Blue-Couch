@@ -37,6 +37,7 @@ const filesToCache = [
   '/css/page5.css',
   '/css/page6.css',
   '/css/page7.css',
+  '/css/page8-x.css',
   '/css/page8.css',
   '/css/page9.css',
   '/css/page10.css',
@@ -49,6 +50,8 @@ const filesToCache = [
   '/img/bluecouch.png',
   '/img/menu-bar.png',
   '/img/rightarrow.png',
+  '/img/bluecouch.png',
+  '/img/bluecouch.svg',
   '/font/batang.woff',
   'https://www.gstatic.com/charts/loader.js'
 ];
