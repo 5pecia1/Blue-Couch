@@ -1,25 +1,31 @@
-textarea {
+           
+#container1 {
+    display: flex;
+    justify-content: center;
+                        
+}
+            
+#container2 {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border-color:lightgrey;
-    height: 55vh;
+    height: 50vh;
     width: 80vw;
 }
 
-#txtSearch {
+.record{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border-color:lightgrey;
-    height: 3vh;
-    width: 40vw;
-}
-
-#txtSearch::placeholder {
-  color: grey;  
-  font-style: italic;
-  font-size: 1.3em;
+    height: 4vh;
+    width: 80vw;
 }
 
 textarea::placeholder {
@@ -28,14 +34,19 @@ textarea::placeholder {
   font-size: 1.3em;
 }
 
-@font-face {
-	font-family: batang;
-	src:url(batang.woff);
+.button {
+    font-size: 1.2em;
+    font-family:'batang';
     font-weight: normal;
+    color: skyblue;
 }
 
-.buttons {
+@font-face {
+	font-family: batang;
+	src:url(../font/batang.woff);
+    font-weight: normal;
+}
+.arrowdelete {
     display: flex;
     justify-content: space-between;
 }
-

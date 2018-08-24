@@ -1,31 +1,25 @@
-           
-#container1 {
-    display: flex;
-    justify-content: center;
-                        
-}
-            
-#container2 {
-    display: flex;
-    justify-content: center;
-}
-
-.text {
+textarea {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border-color:lightgrey;
-    height: 50vh;
+    height: 55vh;
     width: 80vw;
 }
 
-.record{
+#txtSearch {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border-color:lightgrey;
-    height: 4vh;
-    width: 80vw;
+    height: 3vh;
+    width: 40vw;
+}
+
+#txtSearch::placeholder {
+  color: grey;  
+  font-style: italic;
+  font-size: 1.3em;
 }
 
 textarea::placeholder {
@@ -34,19 +28,14 @@ textarea::placeholder {
   font-size: 1.3em;
 }
 
-.button {
-    font-size: 1.2em;
-    font-family:'batang';
-    font-weight: normal;
-    color: skyblue;
-}
-
 @font-face {
 	font-family: batang;
-	src:url(batang.woff);
+	src:url(../font/batang.woff);
     font-weight: normal;
 }
-.arrowdelete {
+
+.buttons {
     display: flex;
     justify-content: space-between;
 }
+

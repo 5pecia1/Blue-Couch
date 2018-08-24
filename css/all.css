@@ -67,7 +67,7 @@
 
 @font-face {
 	font-family: batang;
-	src:url(batang.woff);
+	src:url(../font/batang.woff);
     font-weight: normal;
 }
 
@@ -161,7 +161,7 @@
 
 @font-face {
 	font-family: batang;
-	src:url(batang.woff);
+	src:url(../font/batang.woff);
     font-weight: normal;
 }
 
