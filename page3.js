@@ -23,13 +23,15 @@ $(document).ready(function () {
       }  
   }  
 
+  function move() {
+    location.href = 'page4.html';
+  }
   
   
   $("#addBtn").click(function () {    
-    var content = $('#content').val();  
-    var newDate = new Date();
-    var Month = newDate.getMonth()+1; 
-    var date = newDate.getFullYear() + '.' + Month + '.' + newDate.getDate() + ', ' + newDate.getHours() + ':' + newDate.getMinutes();
+    var content = $('#content').val();
+    var newdate = new Date();  
+    var date = new Date(newdate.toISOString());
     var color = "#" + readColorByQueryString();
 
     var transaction = db.transaction(["MemoTextField"], "readwrite");  
