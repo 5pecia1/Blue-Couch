@@ -41,7 +41,8 @@ $(document).ready(function () {
 
     transaction.oncomplete = function (event) {  
         console.log("Success :)");  
-        $('#result').html("Add: Successfully");  
+        $('#result').html("Add: Successfully");
+        move();  
 
     };  
 
