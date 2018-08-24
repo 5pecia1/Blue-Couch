@@ -1,6 +1,15 @@
 /*~767: 반응형으로*/
 /*768~: width:768 height: 1024 크기로 고정시키기*/
 
+.color {
+    height: 15px;
+    width: 15px;
+    color: rgb(143, 196, 241);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
 
 .menuflex {
         display: flex; 
@@ -145,16 +154,6 @@ p {
     height: 94px;
     width: 94px;
     background-color: rgb(117, 212, 243);
-    color: rgb(143, 196, 241);
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-.color {
-    height: 15px;
-    width: 15px;
     color: rgb(143, 196, 241);
     border-radius: 100%;
     display: flex;
