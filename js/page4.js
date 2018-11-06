@@ -28,14 +28,14 @@ function init() {
 
 	dbSetup().then(function() {
 		console.log('db is setup');
-		
+
 		countData().then(function(result) {
 			totaltext = result;
 			displayData();
 		});
 
 	}).catch(function(e) {
-		console.log('I had an issue making the db: '+e);	
+		console.log('I had an issue making the db: '+e);
 	});
 }
 
@@ -60,13 +60,12 @@ function dbSetup() {
 		};
 
 	});
-
 }
 
 function countData() {
 
 	return new Promise(function(resolve, reject) {
-		
+
 		db.transaction(['MemoTextField'],'readonly').objectStore('MemoTextField').count().onsuccess = function(e) {
 			resolve(e.target.result);
 		};
@@ -160,5 +159,3 @@ function getData(start,total) {
 	});
 
 }
-
-
