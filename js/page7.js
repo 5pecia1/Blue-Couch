@@ -79,21 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
             }
         };
-        // function createAudioElement(blobUrl) {
-        //     const downloadEl = document.createElement('a');
-        //     downloadEl.style = 'display: inline-block';
-        //     downloadEl.innerHTML = 'download';
-        //     downloadEl.download = 'audio.webm';
-        //     downloadEl.href = blobUrl;
-        //     const audioEl = document.createElement('audio');
-        //     audioEl.controls = true;
-        //     const sourceEl = document.createElement('source');
-        //     sourceEl.src = blobUrl;
-        //     sourceEl.type = 'audio/webm';
-        //     audioEl.appendChild(sourceEl);
-        //     document.body.appendChild(audioEl);
-        //     document.body.appendChild(downloadEl);
-        // }
     }
     currentTime.textContent = NOW();
 
@@ -129,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     cancle.onclick = function() {
+
         h2.textContent = "00:00";
         clearTimeout(t);
         seconds = 0; minutes = 0;
