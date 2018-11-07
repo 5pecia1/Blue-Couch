@@ -129,12 +129,6 @@ p {
  font-size: 1.3em;
 }
 
-.fixedsizefortablet {
-    width: 70%;
-    height: 100%;
-    margin: auto;
-}
-
 .explanationfont{
     font-size:0.8em;
     font-family: 'batang';
