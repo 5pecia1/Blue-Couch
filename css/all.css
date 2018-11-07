@@ -14,6 +14,14 @@
     margin: auto;
 }
 
+.in {
+    display: inline-block;
+}
+
+.mdl-layout__header-row {
+    padding-left: 20px;
+}
+
 .menuflex {
         display: flex; 
         justify-content: space-between;
@@ -21,9 +29,8 @@
         padding-right: 10px;
 }
 .menu-bar {
-        width:70px;
-        height:70px;
-        padding: 2%; 
+    height: 75px;
+    width: 75px;
 }
 
 .date {
@@ -120,6 +127,12 @@ p {
 .font{
  font-family: 'batang'; 
  font-size: 1.3em;
+}
+
+.fixedsizefortablet {
+    width: 70%;
+    height: 100%;
+    margin: auto;
 }
 
 .explanationfont{
