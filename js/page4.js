@@ -88,8 +88,9 @@ function displayData() {
 			<tr>
 				<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
 				<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${cat.Color} }</style></span></td>
-				<td class="td" id=${cat.textNo}>${cat.Content}</td>
 				<td><audio src="${audioUrl}" controls 	type="audio/mpeg"></td>
+				<td class="td" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
+
 			</tr>`;
 		});
 
@@ -111,10 +112,10 @@ function displayData() {
 	});
 }
 
-// function tr(key) {
-// 	console.log(key + "page load");
-// 	location.href = 'page6.html?' + "id=" + key;
-// }
+function tr(key) {
+	console.log(key + "page load");
+	location.href = 'page6.html?' + "id=" + key;
+}
 
 function move(e) {
 	if(e.target.id === 'nextButton') {
