@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
     var request, db;
+    let h2 = document.getElementById('timer');
     let addData = document.getElementById('addBtn');
     let audioData = document.getElementById('audioBtn');
     let stop = document.getElementById('stopBtn');
     var recorder,chunks = [];
+    var seconds = 0,minutes = 0, clear_time = 0;
     var blob;
     if (!window.indexedDB) {
         console.log("Your Browser does not support IndexedDB");
@@ -28,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     audioData.addEventListener('click', function() {
+      timer();
       navigator.mediaDevices.getUserMedia({ audio: true })
       .then(stream => {handlerFuction(stream)});
     });
@@ -54,9 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         recorder.start();
 
         recorder.ondataavailable = e => {
-            console.log(recorder.state);
             chunks.push(e.data);
-            console.log("12312312"+chunks);
             if (recorder.state == 'inactive') {
                 blob = new Blob(chunks, {type:'audio/wav'});
                 stream.getTracks().forEach(track => track.stop());
@@ -64,8 +66,30 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+    function add() {
+        seconds++;
+
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+                minutes = 0;
+            }
+        }
+
+        h2.textContent =(minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+        timer();
+    }
+
+    function timer() {
+        clear_time = setTimeout(add, 1000);
+    }
     stop.addEventListener('click', function(){
-        alert("저장 되었습니다.");
+        alert(h2.textContent + " 저장 되었습니다.");
+        h2.textContent = "00:00";
+        seconds = 0; minutes = 0;
+        chunks = [];
+        clearTimeout(clear_time);
         recorder.stop();
     });
 
