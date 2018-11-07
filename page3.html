@@ -37,10 +37,10 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title"><img class="menu-bar" src="img/bluecouch.png" /></span>
+                <span class="mdl-layout-title"><img class="menu-bar" src="img/bluecouch.png" onclick="location.href='index.html'"/></span>
                 <div class="in">
                     <div style="padding-left: 35px;">
-                        <h4>Blue Couch</h4>
+                        <h4 onclick="location.href='index.html'">Blue Couch</h4>
                     </div>
                 </div>
                 <!-- Add spacer, to align navigation to the right -->
@@ -64,33 +64,29 @@
             <br>
             <span class="circle"></span>
             <p class="date" id="now"></p>
-
-            <div class=textareaflex>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <textarea class="mdl-textfield__input" type="text" rows= "6" col="50" name="content" id="content"  ></textarea>
-                    <label class="mdl-textfield__label">지금 당신의 기분은 어떠한가요?</label>
-                </div>
+            <center>
+            <div class="mdl-textfield mdl-js-textfield">
+                <textarea class="mdl-textfield__input" type="text" rows= "6" col="50" name="content" id="content"  ></textarea>
+                <label class="mdl-textfield__label">지금 당신의 기분은 어떠한가요?</label>
             </div>
-
+            </center>
             <center>
                 <input type="button" value="녹음하기" onclick="location.href='page7.html'" class="button">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="addBtn">
                     저장하기
                 </button>
             </center>
-            
         </div>
-        <script src="js/page7.js"></script>
         <main class="mdl-layout__content">
             <div class="page-content">
                 <!-- Your content goes here -->
             </div>
         </main>
-    </div>
-    <div id="fixedfooter">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="window.history.back();">
-            <i class="material-icons">keyboard_backspace</i>
-        </button>
+        <div>
+                <button tpye="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="window.history.back();">
+                    <i class="material-icons">keyboard_backspace</i>
+                </button>
+        </div>
     </div>
     <br><br>
     <!--div 추가-->

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentTime = document.getElementById('now');
     let updateData = document.getElementById('updateBtn');
     let deleteData = document.getElementById('deleteBtn');
+    let backData = document.getElementById('back');
        
     if (!window.indexedDB) {  
         console.log("Your Browser does not support IndexedDB");  
@@ -80,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var id = readIdByQueryString();  
         db.transaction(["MemoTextField"], "readwrite").objectStore("MemoTextField").delete(id);  
         alert(' Recored No. ' + id + ' Deleted Successfully !!!');
+        move();
+    });
+    
+    backData.addEventListener('click', function () {  
         move();
     });  
   

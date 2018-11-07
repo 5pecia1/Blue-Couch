@@ -25,10 +25,10 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title"><img class="menu-bar" src="img/bluecouch.png" /></span>
+                <span class="mdl-layout-title"><img class="menu-bar" onclick="location.href='index.html'" src="img/bluecouch.png" /></span>
                 <div class="in">
                     <div style="padding-left: 35px;">
-                        <h4>Blue Couch</h4>
+                        <h4 onclick="location.href='index.html'">Blue Couch</h4>
                     </div>
                 </div>
                 <!-- Add spacer, to align navigation to the right -->
@@ -59,14 +59,14 @@
             </center>
             </body>
             <form>
-                <br />
+                <br/>
                 <div class="buttons">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="window.history.back();">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="button" onclick="location.href='page4.html'">
                         <i class="material-icons">keyboard_backspace</i>
                     </button>
                     <div class="blankbutton"></div>
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="updateBtn"> 수정하기 </button>
-                    <input type="button" value="삭제하기" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="deleteBtn">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="deleteBtn"> 삭제하기 </button>
                 </div>
             </form>
         </div>
