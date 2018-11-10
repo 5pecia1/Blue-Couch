@@ -37,6 +37,7 @@ textarea::placeholder {
 #fixedfooter {
     position:absolute;
     bottom:0;
+    margin: auto;
 }
 
 /*tablet 크기*/
@@ -78,5 +79,4 @@ textarea::placeholder {
 #fixedfooter {
     position:absolute;
     bottom:0;
-}
 }

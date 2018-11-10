@@ -35,11 +35,6 @@
 /*태블릿 크기*/
 @media screen and (min-width: 768px) {
         
-.fixedsizefortablet {
-    width: 768px;
-    height: 1024px;
-}
-
 #content{
         margin-top: 100px;
         /*width: 480px;*/
