@@ -84,16 +84,34 @@ function displayData() {
 				audioUrl= URL.createObjectURL(datas[i].Audio);
 				s += `
 				<tr>
-					<td class="header_font"><p class="mdl-navigation__link mdl-typography--text-uppercase">${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</p></td>
-					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
-					<td><audio src="${audioUrl}" controls 	type="audio/mpeg"></td>
-					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}><p class="mdl-navigation__link mdl-typography--text-uppercase">${datas[i].Content}</p></td>
+					<td class="header_font vertical-middle" style="vertical-align:middle">
+					  <p class="mdl-navigation__link mdl-typography--text-uppercase">
+						${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}
+					  </p>
+					</td>
+					<td style="vertical-align:middle">
+					  <span class="color" id="color${datas[i].textNo}">
+						<style> 
+						  #color${datas[i].textNo} { 
+							background-color: ${color};
+						  }
+						</style>
+					  </span>
+					</td>
+					<td>
+					  <audio src="${audioUrl}" controls 	type="audio/mpeg">
+					</td>
+					<td class="td" style="color: #757575; font-weight: 700; vertical-align:middle" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>
+					  <p class="mdl-navigation__link mdl-typography--text-uppercase">
+						${datas[i].Content}
+					  </p></td>
 				</tr>`;
 			}
 			else {
 				s += `
 				<tr>
-					<td class="header_font">${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
+					<td class="header_font">
+					  ${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
 					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
 					<td></td>
 					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
