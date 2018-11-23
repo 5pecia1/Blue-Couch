@@ -21,8 +21,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-115161414-4');
+    function autoTextarea(obj,limit) {
+        obj.style.height = "1px";
+        if (limit >= obj.scrollHeight) obj.style.height = (20+obj.scrollHeight)+"px";
+        else obj.style.height = (20+limit)+"px";
+    }
     </script>
 </head>
 
@@ -71,7 +75,7 @@
             <p class="date" id="now"></p>
             <center>
                 <div class="mdl-textfield mdl-js-textfield">
-                    <textarea class="mdl-textfield__input" type="text" rows= "6" col="50" name="content" id="content"  ></textarea>
+                    <textarea class="mdl-textfield__input" type="text" onkeyup="autoTextarea(this,100);" name="content" id="content"  ></textarea>
                     <label class="mdl-textfield__label">지금 당신의 기분은 어떠한가요?</label>
                 </div>
             </center>
