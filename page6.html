@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
+    <title>Blue Couch</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,6 +22,10 @@
         .mdl-layout__header-row {
             padding-left: 20px;
         }
+        .mdl-layout__header {
+            overflow: visible;
+            background-color: white;
+        }
     </style>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
@@ -28,7 +34,7 @@
                 <span class="mdl-layout-title"><img class="menu-bar" onclick="location.href='index.html'" src="img/bluecouch.png" /></span>
                 <div class="in">
                     <div style="padding-left: 35px;">
-                        <h4 onclick="location.href='index.html'">Blue Couch</h4>
+                        <h4 class="header_font" onclick="location.href='index.html'">Blue Couch</h4>
                     </div>
                 </div>
                 <!-- Add spacer, to align navigation to the right -->
@@ -38,11 +44,12 @@
                 <!-- Navigation. We hide it in small screens. -->
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                                                                 mdl-textfield--floating-label mdl-textfield--align-right"></div>
-                <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>
+                <div class="material-icons mdl-badge mdl-badge--overlap">account_box</div>
                 <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                     <i class="material-icons">reorder</i>
                 </button>
                 <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                        <li class="mdl-menu__item" onclick="location.href='index.html'">홈화면</li>
                     <li class="mdl-menu__item" onclick="location.href='page4.html'">기록들</li>
                 </ul>
             </div>
@@ -61,12 +68,12 @@
             <form>
                 <br/>
                 <div class="buttons">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="button" onclick="location.href='page4.html'">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" onclick="location.href='page4.html'">
                         <i class="material-icons">keyboard_backspace</i>
                     </button>
                     <div class="blankbutton"></div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="updateBtn"> 수정하기 </button>
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="deleteBtn"> 삭제하기 </button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="updateBtn"> 수정하기 </button>
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="deleteBtn"> 삭제하기 </button>
                 </div>
             </form>
         </div>
