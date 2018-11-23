@@ -77,14 +77,15 @@ function countData() {
 
 function displayData() {
 
-	getData(position,page).then(function(cats) {
+	getData(position,page).then(function(datas) {
 		var s = '';
 		var audioUrl;
-		cats.forEach(function(cat) {
-			color = cat.Color;
-			if(cat.Audio != undefined) {
-				audioUrl= URL.createObjectURL(cat.Audio);
-				i += cat.textNo;
+		for(var i = datas.length-1; i > -1; i--) {
+			console.log(i);
+
+			color = datas[i].Color;
+			if(datas[i].Audio != undefined) {
+				audioUrl= URL.createObjectURL(datas[i].Audio);
 				s += `
 				<tr>
 					<td class="header_font"><p class="mdl-navigation__link mdl-typography--text-uppercase">${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</p></td>
@@ -94,7 +95,6 @@ function displayData() {
 				</tr>`;
 			}
 			else {
-				i += cat.textNo;
 				s += `
 				<tr>
 					<td class="header_font">${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
@@ -103,11 +103,9 @@ function displayData() {
 					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
 				</tr>`;
 			}
-		});
-
+		}
 		document.getElementById('tbody').innerHTML = s;
 
-		console.log('got cats');
 		if(position > 0) {
 			console.log('enable back');
 			$prev.removeAttribute('disabled');
@@ -145,7 +143,7 @@ function getData(start,total) {
 		var t = db.transaction(['MemoTextField'],'readonly');
 		var catos = t.objectStore('MemoTextField');
 		var cats = [];
-
+		
 		console.log('start='+start+' total='+total);
 		var hasSkipped = false;
 		catos.openCursor().onsuccess = function(e) {
