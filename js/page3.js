@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         request.onupgradeneeded = function (event) {
             console.log("Upgrading");
             db = event.target.result;
-            var objectStore = db.createObjectStore("RecordField", { keyPath: "RecordNo", autoIncrement: true });
+            var objectStore = db.createObjectStore("MemoTextField", { keyPath: "RecordNo", autoIncrement: true });
 
         }
         request.onsuccess = function (event) {
