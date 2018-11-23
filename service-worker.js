@@ -18,7 +18,6 @@ const filesToCache = [
   './page5-x.html',
   './page5.html',
   './page6.html',
-  './page7.html',
   './page8-x.html',
   './page8.html',
   './page9.html',
@@ -36,7 +35,6 @@ const filesToCache = [
   './css/page4.css',
   './css/page5.css',
   './css/page6.css',
-  './css/page7.css',
   './css/page8-x.css',
   './css/page8.css',
   './css/page9.css',
@@ -56,7 +54,6 @@ const filesToCache = [
   './js/page3.js',
   './js/page4.js',
   './js/page6.js',
-  './js/page7.js',
   './js/page8.js',
 ];
 
