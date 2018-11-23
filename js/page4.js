@@ -79,16 +79,16 @@ function displayData() {
 
 	getData(position,page).then(function(cats) {
 		var s = '';
-		console.log(cats)
 		var audioUrl;
 		cats.forEach(function(cat) {
+			color = cat.Color;
 			if(cat.Audio != undefined) {
 				audioUrl= URL.createObjectURL(cat.Audio);
 				i += cat.textNo;
 				s += `
 				<tr>
 					<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
-					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${cat.Color} }</style></span></td>
+					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
 					<td><audio src="${audioUrl}" controls 	type="audio/mpeg"></td>
 					<td class="td" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
 				</tr>`;
@@ -98,7 +98,7 @@ function displayData() {
 				s += `
 				<tr>
 					<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
-					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${cat.Color} }</style></span></td>
+					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
 					<td></td>
 					<td class="td" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
 				</tr>`;
