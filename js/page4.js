@@ -77,37 +77,35 @@ function countData() {
 
 function displayData() {
 
-	getData(position,page).then(function(cats) {
+	getData(position,page).then(function(datas) {
 		var s = '';
 		var audioUrl;
-		cats.forEach(function(cat) {
-			color = cat.Color;
-			if(cat.Audio != undefined) {
-				audioUrl= URL.createObjectURL(cat.Audio);
-				i += cat.textNo;
+		for(var i = datas.length-1; i > -1; i--) {
+			console.log(i);
+
+			color = datas[i].Color;
+			if(datas[i].Audio != undefined) {
+				audioUrl= URL.createObjectURL(datas[i].Audio);
 				s += `
 				<tr>
-					<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
-					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
-					<td><audio src="${audioUrl}" controls 	type="audio/mpeg"></td>
-					<td class="td" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
+					<td>${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
+					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
+					<td><audio src="${audioUrl}" controls 	type="audio/mpeg" style="width:100%"></td>
+					<td class="td" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
 				</tr>`;
 			}
 			else {
-				i += cat.textNo;
 				s += `
 				<tr>
-					<td>${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
-					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
+					<td>${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
+					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
 					<td></td>
-					<td class="td" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
+					<td class="td" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
 				</tr>`;
 			}
-		});
-
+		}
 		document.getElementById('tbody').innerHTML = s;
 
-		console.log('got cats');
 		if(position > 0) {
 			console.log('enable back');
 			$prev.removeAttribute('disabled');
@@ -145,7 +143,7 @@ function getData(start,total) {
 		var t = db.transaction(['MemoTextField'],'readonly');
 		var catos = t.objectStore('MemoTextField');
 		var cats = [];
-
+		
 		console.log('start='+start+' total='+total);
 		var hasSkipped = false;
 		catos.openCursor().onsuccess = function(e) {

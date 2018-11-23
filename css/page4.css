@@ -21,6 +21,9 @@
     width: 90vw;
     
 }
+audio {
+    background-color: white;
+}
 
 table.shorttable {
     border-collapse: separate;
