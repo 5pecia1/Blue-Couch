@@ -80,6 +80,36 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+    function textareaSetLine(textarea)
+    {
+    /*
+    var currentHeight = textarea.style.pixelHeight;
+    var overHeight = textarea.scrollHeight;
+
+    if(overHeight >= currentHeight)
+    textarea.style.pixelHeight = overHeight + 5;
+    */
+
+        if(textarea.scrollHeight > textarea.clientHeight)
+            textarea.style.height = textarea.scrollHeight + 5;
+    }
+
+    function textareaHeightOnload()
+    {
+    // var textarea = document.forms[0].elements['memo'];
+        var textarea = document.getElementsByTagName("textarea");
+
+        for(var i = 0; i < textarea.length; i++)
+        {
+            var newHeight = textarea[i].scrollHeight;
+
+            if(newHeight <= 100)
+                newHeight = 100;
+
+        textarea[i].style.height = newHeight + 5;
+    }
+
+
     function add() {
         seconds++;
 

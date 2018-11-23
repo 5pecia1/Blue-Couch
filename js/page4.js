@@ -88,19 +88,19 @@ function displayData() {
 				audioUrl= URL.createObjectURL(datas[i].Audio);
 				s += `
 				<tr>
-					<td>${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
-					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
-					<td><audio src="${audioUrl}" controls 	type="audio/mpeg" style="width:100%"></td>
-					<td class="td" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
+					<td class="header_font"><p class="mdl-navigation__link mdl-typography--text-uppercase">${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</p></td>
+					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
+					<td><audio src="${audioUrl}" controls 	type="audio/mpeg"></td>
+					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${cat.textNo}) id=${cat.textNo}><p class="mdl-navigation__link mdl-typography--text-uppercase">${cat.Content}</p></td>
 				</tr>`;
 			}
 			else {
 				s += `
 				<tr>
-					<td>${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
-					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
+					<td class="header_font">${cat.Date.getFullYear()}-${(((cat.Date.getMonth()+1) < 10) ? '0' + (cat.Date.getMonth()+1) : (cat.Date.getMonth()+1))}-${((cat.Date.getDate() < 10) ? '0' + cat.Date.getDate() : cat.Date.getDate())} ${((cat.Date.getHours() < 10) ? '0' + cat.Date.getHours() : cat.Date.getHours())}:${((cat.Date.getMinutes() < 10) ? '0' + cat.Date.getMinutes() : cat.Date.getMinutes())}</td>
+					<td><span class="color" id="color${cat.textNo}"><style> #color${cat.textNo} { background-color: ${color} }</style></span></td>
 					<td></td>
-					<td class="td" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
+					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${cat.textNo}) id=${cat.textNo}>${cat.Content}</td>
 				</tr>`;
 			}
 		}
