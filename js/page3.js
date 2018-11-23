@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // windowwindow.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-
+    var check = 0;
     var request, db;
     let h2 = document.getElementById('timer');
     let addData = document.getElementById('addBtn');
     let audioData = document.getElementById('audioBtn');
-    let stop = document.getElementById('stopBtn');
     var recorder,chunks = [];
     var seconds = 0,minutes = 0, clear_time = 0;
     var blob;
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         request.onupgradeneeded = function (event) {
             console.log("Upgrading");
             db = event.target.result;
-            var objectStore = db.createObjectStore("RecordField", { keyPath: "RecordNo", autoIncrement: true });
+            var objectStore = db.createObjectStore("MemoTextField", { keyPath: "textNo", autoIncrement: true });
 
         }
         request.onsuccess = function (event) {
@@ -31,15 +30,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     audioData.addEventListener('click', function() {
-      timer();
-      navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {handlerFuction(stream)});
+      if(check == 0) {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {handlerFuction(stream)});
+      }
+      else {
+        alert(h2.textContent + " 저장 되었습니다.");
+        h2.textContent = "00:00";
+        seconds = 0; minutes = 0;
+        chunks = [];
+        clearTimeout(clear_time);
+        recorder.stop();
+        check = 0;
+        audioData.value = "녹음하기";
+        addData.disabled = false;
+      }
     });
 
     function handlerFuction(stream){
         recorder = new MediaRecorder(stream);
         console.log('권한 확인을 위해서 로그를 띄움');
-
+        check = 1;
+        addData.disabled = true;
+        timer();
         if (window.MediaRecorder == undefined) {
             console.error('MediaRecorder not supported, boo');
         }
@@ -54,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 'supported' : 'NOT supported '));
             });
         }
-
+        
+        audioData.value = "정지하기";
         recorder.start();
 
         recorder.ondataavailable = e => {
@@ -84,14 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function timer() {
         clear_time = setTimeout(add, 1000);
     }
-    stop.addEventListener('click', function(){
-        alert(h2.textContent + " 저장 되었습니다.");
-        h2.textContent = "00:00";
-        seconds = 0; minutes = 0;
-        chunks = [];
-        clearTimeout(clear_time);
-        recorder.stop();
-    });
 
     addData.addEventListener('click', function () {
         var content = document.querySelector('#content').value;
