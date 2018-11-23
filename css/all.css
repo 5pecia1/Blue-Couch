@@ -18,6 +18,21 @@
     display: inline-block;
 }
 
+.material-icons {
+    color: #767777 !important;
+}
+.mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+}
+.header_font {
+    color: #757575;
+    font-weight: 700;
+}
+.normal_font {
+    color: #757575;
+}
+
 .mdl-layout__header-row {
     padding-left: 20px;
 }
