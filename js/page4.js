@@ -13,8 +13,6 @@ var $prev, $next;
 //how many per page?
 var page = 5;
 
-var i = [];
-
 document.addEventListener('DOMContentLoaded', init, false);
 
 function init() {
@@ -80,7 +78,7 @@ function displayData() {
 	getData(position,page).then(function(datas) {
 		var s = '';
 		var audioUrl;
-		for(var i = datas.length-1; i > -1; i--) {
+		for(let i = datas.length-1; i > -1; i--) {
 			color = datas[i].Color;
 			if(datas[i].Audio != undefined) {
 				audioUrl= URL.createObjectURL(datas[i].Audio);
