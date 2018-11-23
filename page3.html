@@ -31,6 +31,11 @@
         .mdl-layout__header-row {
             padding-left: 20px;
         }
+
+        .mdl-layout__header {
+            overflow: visible;
+            background-color: white;
+        }
     </style>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
@@ -39,7 +44,7 @@
                 <span class="mdl-layout-title"><img class="menu-bar" src="img/bluecouch.png" onclick="location.href='index.html'"/></span>
                 <div class="in">
                     <div style="padding-left: 35px;">
-                        <h4 onclick="location.href='index.html'">Blue Couch</h4>
+                        <h4 class="header_font" onclick="location.href='index.html'">Blue Couch</h4>
                     </div>
                 </div>
                 <!-- Add spacer, to align navigation to the right -->
@@ -49,11 +54,12 @@
                 <!-- Navigation. We hide it in small screens. -->
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                                             mdl-textfield--floating-label mdl-textfield--align-right"></div>
-                <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>
+                <div class="material-icons mdl-badge mdl-badge--overlap">account_box</div>
                 <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                     <i class="material-icons">reorder</i>
                 </button>
                 <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                    <li class="mdl-menu__item" onclick="location.href='index.html'">홈화면</li>
                     <li class="mdl-menu__item" onclick="location.href='page4.html'">기록들</li>
                 </ul>
             </div>
@@ -70,22 +76,20 @@
                 </div>
             </center>
             <center>
-
-                <input type="button" value="녹음하기" id ="audioBtn" class="button">
+                <input type="button" value="녹음하기" id ="audioBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
                 <h2 style="display: inline-block;" id = "timer"><time>00:00</time></h2>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="addBtn">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="addBtn">
                     저장하기
                 </button>
             </center>
         </div>
-
         <main class="mdl-layout__content">
             <div class="page-content">
                 <!-- Your content goes here -->
             </div>
         </main>
         <div>
-            <button tpye="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="window.history.back();">
+            <button tpye="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="window.history.back();">
                 <i class="material-icons">keyboard_backspace</i>
             </button>
         </div>
