@@ -1,4 +1,4 @@
-const version = "0.6.2"
+const version = "0.6.3.1"
 const cacheName = `BlueCouch-${version}`;
 const filesToCache = [
   './',

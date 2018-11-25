@@ -111,10 +111,26 @@ function displayData() {
 				s += `
 				<tr>
 					<td class="header_font">
-					  ${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}</td>
-					<td><span class="color" id="color${datas[i].textNo}"><style> #color${datas[i].textNo} { background-color: ${color} }</style></span></td>
-					<td></td>
-					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>${datas[i].Content}</td>
+					  <p class="mdl-navigation__link mdl-typography--text-uppercase">
+						${datas[i].Date.getFullYear()}-${(((datas[i].Date.getMonth()+1) < 10) ? '0' + (datas[i].Date.getMonth()+1) : (datas[i].Date.getMonth()+1))}-${((datas[i].Date.getDate() < 10) ? '0' + datas[i].Date.getDate() : datas[i].Date.getDate())} ${((datas[i].Date.getHours() < 10) ? '0' + datas[i].Date.getHours() : datas[i].Date.getHours())}:${((datas[i].Date.getMinutes() < 10) ? '0' + datas[i].Date.getMinutes() : datas[i].Date.getMinutes())}
+					  </p>
+					</td>
+					<td>
+					  <span class="color" id="color${datas[i].textNo}">
+						<style> #color${datas[i].textNo} 
+						  { 
+							background-color: ${color} 
+						  }
+						</style>
+					  </span>
+					</td>
+					<td>
+					</td>
+					<td class="td" style="color: #757575; font-weight: 700;" onclick=tr(${datas[i].textNo}) id=${datas[i].textNo}>
+					  <p class="mdl-navigation__link mdl-typography--text-uppercase">
+					    ${datas[i].Content}
+					  </p>
+					</td>
 				</tr>`;
 			}
 		}
